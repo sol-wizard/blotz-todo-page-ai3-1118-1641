@@ -11,6 +11,12 @@ addButton.addEventListener("click", function () {
   // 3. Change the page: add a new item to the list
   const item = document.createElement("li");
   item.textContent = text;
+
+  // Click a task to mark it as done (click again to undo)
+  item.addEventListener("click", function () {
+    item.classList.toggle("done");
+  });
+
   list.appendChild(item);
 
   input.value = "";
