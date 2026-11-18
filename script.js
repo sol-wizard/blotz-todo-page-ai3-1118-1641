@@ -22,3 +22,13 @@ addButton.addEventListener("click", function () {
   input.value = "";
   input.focus();
 });
+
+// "Clear done": find every task marked done and remove it
+const clearDoneButton = document.getElementById("clear-done-button");
+
+clearDoneButton.addEventListener("click", function () {
+  const doneItems = list.querySelectorAll("li.done");
+  doneItems.forEach(function (item) {
+    item.remove();
+  });
+});
